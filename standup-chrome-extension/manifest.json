@@ -1,0 +1,24 @@
+{
+  "name": "Standup Screensharing",
+  "description": "Screensharing extension for the standup app",
+  "version": "0.0.3",
+  "manifest_version": 2,
+  "minimum_chrome_version": "34",
+  "icons": {
+  },
+  "permissions": [
+    "desktopCapture"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": [ "content.js" ],
+    "matches": [ "https://fingertips-standup.herokuapp.com/*" ]
+  }],
+  "externally_connectable": {
+      "matches": [
+          "https://fingertips-standup.herokuapp.com/*"
+      ]
+  }
+}

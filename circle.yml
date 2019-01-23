@@ -1,0 +1,26 @@
+machine:
+  node:
+    version: 8.9.4
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+
+test:
+  pre:
+    - yarn run lint
+  post:
+    - yarn run build
+    - mkdir $CIRCLE_ARTIFACTS/public
+    - mv dist/* $CIRCLE_ARTIFACTS/public
+    - cd $CIRCLE_ARTIFACTS; zip -r $CIRCLE_BRANCH.latest.zip *
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: vf-frontend

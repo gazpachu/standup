@@ -1,0 +1,55 @@
+.home {
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+
+  .room-selector {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.8);
+    text-align: center;
+    z-index: 1;
+    width: 400px;
+    border: 1px solid $darkest-grey;
+    border-radius: 10px;
+    padding: 40px;
+
+    input {
+      display: block;
+      border-bottom: 2px solid $purple;
+      width: 220px;
+      color: $grey;
+      line-height: 50px;
+      font-weight: lighter;
+      margin: 0 auto 30px auto;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .btn {
+      width: 200px;
+      height: 50px;
+      font-size: 25px;
+    }
+  }
+
+  .videos-wrapper {
+    left: 0;
+    top: 45%;
+  }
+
+  .app-version {
+    text-align: center;
+    margin: 0 auto;
+    color: $grey;
+    display: block;
+    font-size: 12px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+  }
+}

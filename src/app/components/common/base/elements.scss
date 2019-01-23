@@ -1,0 +1,175 @@
+[role="button"],
+button,
+input,
+textarea,
+select {
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+/* radio buttons and checkboxes */
+label.checkbox,
+label.radio {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+label.checkbox:before,
+label.radio:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-width: 1px;
+  border-style: solid;
+  margin-right: 10px;
+  border-color: $darkest-grey;
+  vertical-align: middle;
+}
+
+label.radio:before {
+  border-radius: 4px;
+}
+
+label.checkbox:before {
+  border-radius: 0;
+}
+
+input[type=checkbox]:checked + label:before,
+input[type=radio]:checked + label:before {
+  content: "";
+  background-color: $grey;
+}
+
+label.radio .text {
+  color: $darkest-grey;
+  font-weight: 500;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+	opacity: 1;
+	z-index: 0;
+
+	&:hover {
+		z-index: 1;
+	}
+
+	&:hover .tooltip-text,
+	&.active .tooltip-text {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.tooltip-text {
+		visibility: hidden;
+		background-color: rgba(0,0,0,.9);
+		color: $white;
+		font-size: 12px;
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px;
+		position: absolute;
+		opacity: 0;
+		transition: opacity 1s;
+		z-index: 9;
+
+		&.inverted {
+			background-color: rgba(255,255,255,.9);
+			color: $white;
+		}
+
+		&.right {
+			top: -5px;
+    	left: 105%;
+
+			&::after {
+				top: 50%;
+				right: 100%; /* To the left of the tooltip */
+				border-color: transparent rgba(0,0,0,.9) transparent transparent;
+        transform: rotate(90deg);
+        transform-origin: top;
+			}
+
+			&.inverted {
+				&::after { border-color: transparent rgba(255,255,255,.9) transparent transparent; }
+			}
+		}
+
+		&.left {
+			top: 15px;
+    	right: 110%;
+      min-width: 120px;
+
+			&::after {
+				top: 50%;
+    		left: 100%; /* To the right of the tooltip */
+				border-color: rgba(0,0,0,.9) transparent transparent transparent;
+        transform: rotate(-90deg);
+        transform-origin: top;
+			}
+
+			&.inverted {
+				&::after { border-color: rgba(255,255,255,.9) transparent transparent transparent; }
+			}
+		}
+
+		&.top {
+			bottom: 125%;
+			left: 50%;
+			margin-left: -75px;
+      min-width: 150px;
+
+			&::after {
+				top: 100%;
+				left: 50%;
+				border-color: rgba(0,0,0,.9) transparent transparent transparent;
+			}
+
+			&.inverted {
+				&::after { border-color: rgba(255,255,255,.9) transparent transparent transparent; }
+			}
+		}
+
+		&.bottom {
+			top: 100%;
+			left: 50%;
+			margin-left: -75px; /* Use half of the width (150/2 = 75), to center the tooltip */
+			margin-top: 5px;
+
+			&::after {
+				bottom: 100%;
+				left: 50%;
+				border-color: transparent transparent rgba(0,0,0,.9) transparent;
+			}
+
+			&.inverted {
+				&::after { border-color: transparent transparent rgba(255,255,255,.9) transparent; }
+			}
+		}
+
+		span {
+			font-size: 11px;
+			display: block;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+		}
+	}
+}

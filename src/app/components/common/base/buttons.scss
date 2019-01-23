@@ -1,0 +1,93 @@
+button {
+	border: none;
+	background: none;
+}
+
+.btn {
+  color: $white;
+  border-width: 1px;
+  border-style: solid;
+	border-radius: 25px;
+	font-weight: 100;
+  padding: 3px 20px 3px 20px;
+  cursor: pointer;
+  @include scale-anim();
+
+	&.btn-primary {
+		background-color: $green;
+    border-color: transparent;
+    color: $black;
+
+		&:active, &:focus, &:hover, &.disabled:hover {
+			opacity: .8;
+			color: $black;
+		}
+	}
+
+  &.btn-secondary {
+    border-color: $white;
+
+		&:active, &:focus, &:hover, &.disabled:hover {
+			background-color: $very-light-grey;
+			color: $red;
+		}
+	}
+
+  &.btn-tertiary {
+		background-color: $purple;
+    border-color: transparent;
+    color: $black;
+
+		&:active, &:focus, &:hover, &.disabled:hover {
+
+		}
+	}
+
+  &.disabled {
+    opacity: .2;
+  }
+
+  &.xs {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.toggle {
+
+  &.react-toggle {
+    vertical-align: top;
+    margin: 0 10px;
+  }
+
+  .react-toggle-track {
+    height: 20px;
+    width: 48px;
+    background-color: $purple;
+
+    .react-toggle-track-x,
+    .react-toggle-track-check {
+      display: none;
+    }
+  }
+
+  &:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: $purple;
+  }
+
+  .react-toggle-thumb {
+    top: 0px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.react-toggle--checked {
+    .react-toggle-track,
+    &:hover:not(.react-toggle--disabled) .react-toggle-track {
+      background-color: $green;
+    }
+    .react-toggle-thumb {
+      border-color: $green;
+    }
+  }
+}

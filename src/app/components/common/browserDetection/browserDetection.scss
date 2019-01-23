@@ -1,0 +1,48 @@
+.browser-detection {
+  background-color: rgba(0,0,0,.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+
+  .browser-box {
+    background-color: $white;
+    border: 5px solid $purple;
+    border-radius: 20px;
+    margin: auto;
+    width: 50vw;
+    position: fixed;
+    top: 25vh;
+    left: 25vw;
+    text-align: center;
+    padding: 30px;
+
+    @include mobile () {
+      width: 90vw;
+      top: 15vh;
+      left: 5vw;
+    }
+  }
+
+  .message {
+    color: $black;
+    line-height: 1.5em;
+  }
+
+  .btn {
+    margin-top: 15px;
+    margin-right: 10px;
+    min-height: 30px;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}

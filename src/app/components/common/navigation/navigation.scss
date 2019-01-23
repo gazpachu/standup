@@ -1,0 +1,50 @@
+.navigation {
+
+	.sidenav {
+    background-color: $black;
+    border-right: 1px solid $darkest-grey;
+
+    transform: translateX(-150%);
+
+    &.opened { animation: slide-in-left + $settings; }
+    &.closed { animation: slide-out-left + $settings; }
+
+    @keyframes slide-in-left {
+      0% { transform: translateX(-150%) }
+      100% { transform: translateX(0%) }
+    }
+
+    @keyframes slide-out-left {
+      0% { transform: translateX(0%) }
+      100% { transform: translateX(-150%) }
+    }
+	}
+
+  .nav-scroll {
+    position: relative;
+    height: calc(100vh - 60px);
+  }
+
+	.nav-items {
+    .nav-item {
+      border-bottom: 1px solid $darkest-grey;
+      background-color: $black;
+      cursor: pointer;
+
+      a, span {
+        padding: 20px;
+        display: block;
+        text-decoration: none;
+        color: $grey;
+      }
+
+      &:hover {
+        background-color: $yellow;
+
+        a, span {
+          color: $darkest-grey;
+        }
+      }
+    }
+	}
+}

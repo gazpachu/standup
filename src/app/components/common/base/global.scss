@@ -1,0 +1,127 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  background-color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: $white;
+  text-decoration: underline;
+}
+
+.app {
+  position: relative;
+  top: 60px;
+}
+
+.page {
+  max-width: 800px;
+  min-height: calc(100vh - 80px);
+  background-color: #111;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  color: $grey;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.overlay {
+	position: fixed;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	height: calc(100vh - 60px);
+	background-color: rgba(0,0,0,.5);
+	z-index: 1;
+	display: none;
+	animation-duration: .3s;
+}
+
+.videos-wrapper {
+  position: absolute;
+  left: 150px;
+  width: 2372px;
+  margin-top: -60px;
+
+  .waves {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 1186px;
+  }
+
+  .wave2 {
+    transform: scaleX(-1) translateX(12px);
+  }
+}
+
+.sidenav {
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 60px;
+  border-top: 1px solid $darkest-grey;
+
+  @include desktop() {
+    width: 25%;
+  }
+}
+
+.nav-items {
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0;
+}

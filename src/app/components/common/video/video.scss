@@ -1,0 +1,121 @@
+.local-video-wrapper,
+#remote-videos .video-wrapper {
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+
+  &.circle {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100px;
+
+    video {
+      // backface-visibility: hidden;
+      // perspective: 1000;
+      // transform: scale3d(1,1,1);
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-overflow-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      border-radius: 100px;
+      background-color: $black;
+
+      .icon {
+        position: absolute;
+        fill: $purple;
+        left: 0;
+        right: 0;
+        top: 32px;
+        margin: 0 auto;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+      }
+
+      &.on {
+        border: 2px solid $green;
+      }
+
+      &.off {
+        border: 2px solid $purple;
+      }
+    }
+
+    .volume {
+      transform-origin: center center;
+      background: white;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      border-radius: 100px;
+      opacity: .15;
+    }
+  }
+}
+
+.local-video-wrapper {
+
+  #local-video {
+    height: 100%;
+
+    #localScreen {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+  }
+}
+
+#remote-videos .video-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .status {
+    position: absolute;
+    z-index: 1;
+    color: white;
+  }
+
+  .btn-mute {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-radius: 50px;
+    padding: 5px;
+
+    &.on {
+      background: $green;
+    }
+
+    &.off {
+      background: $purple;
+    }
+  }
+
+  &.full-screen {
+    .volume, .status, .btn-mute {
+      display: none;
+    }
+
+    .video-overflow-wrapper {
+      video {
+        height: calc(100vh - 100px);
+      }
+    }
+  }
+}
